@@ -15,9 +15,7 @@ pipeline {
 		}
 		stage('build image') {
 			steps {
-				script {
-				sh 'docker build -t ${env.IMAGE_NAME} .'
-				}
+			 sh 'docker build --tag ${env.IMAGE_NAME} .'
 			}
 		}
 		stage('login dockerhub') {
