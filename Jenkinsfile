@@ -15,7 +15,7 @@ pipeline {
 		}
 		stage('build image') {
 			steps {
-			 sh 'docker build --tag ${env.IMAGE_NAME} .'
+			 sh "docker build -t ${env.IMAGE_NAME} ."
 			}
 		}
 		stage('login dockerhub') {
@@ -25,7 +25,7 @@ pipeline {
 		}
 		stage('push image') {
 			steps {
-		          sh 'docker push ${env.IMAGE_NAME}'
+		          sh "docker push ${env.IMAGE_NAME}"
 			}
 		}
 		stage('Deploy to K8s') {
