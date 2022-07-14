@@ -10,7 +10,7 @@ pipeline {
 	stages {
 		stage('git checkout') {
 			steps {
-				git 'https://github.com/Arun02136/flask-demo.git'
+				git 'https://github.com/Arun02136/kub8s.git'
 			}
 		}
 		stage('build image') {
