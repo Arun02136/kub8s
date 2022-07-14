@@ -50,4 +50,5 @@ pipeline {
             		echo 'successfull push the docker image in dockerhub'
         	}
 
+ }
 }
