@@ -1,6 +1,6 @@
 pipeline {
 	environment {
-		IMAGE_NAME = 'arunakilan/flask-demo:${env.BUILD_NUMBER}'
+		IMAGE_NAME = 'arunakilan/flask-demo:${BUILD_NUMBER}'
 	}
 	parameters {
 	string(name: 'UNAME', defaultValue:'', description: 'enter your dockerhub username')
@@ -20,7 +20,7 @@ pipeline {
 		}
 		stage('login dockerhub') {
 			steps {
-		          sh "docker login -u ${param.UNAME} -p ${param.PWD}"
+		          sh "docker login -u ${params.UNAME} -p ${params.PWD}"
 			}
 		}
 		stage('push image') {
